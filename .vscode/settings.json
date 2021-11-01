@@ -7,6 +7,8 @@
     "kubectl",
     "kubernetes",
     "ngnix",
+    "signin",
+    "signout",
     "skaffold"
   ],
   "vs-kubernetes": {
