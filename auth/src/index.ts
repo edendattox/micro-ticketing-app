@@ -16,6 +16,7 @@ import { signoutRouter } from "./routes/signout";
 import { signupRouter } from "./routes/signup";
 
 const app = express();
+app.use(json());
 
 /**
  * Routers
@@ -29,7 +30,6 @@ app.use(signupRouter);
 /**
  *  Middlewares
  */
-app.use(json());
 app.use(errorHandler);
 
 app.listen(3000, () => {

@@ -17,14 +17,14 @@ router.post(
   (req: Request, res: Response) => {
     const errors = validationResult(req);
 
-    // if (!errors.isEmpty()) {
-    //   throw new RequestValidationError(errors.array());
-    // }
+    if (!errors.isEmpty()) {
+      throw new RequestValidationError(errors.array());
+    }
 
-    // console.log("Creating a user...");
-    // throw new DatabaseConnectionError();
+    console.log("Creating a user...");
+    throw new DatabaseConnectionError();
 
-    res.send({ message: req });
+    res.send({});
   }
 );
 
