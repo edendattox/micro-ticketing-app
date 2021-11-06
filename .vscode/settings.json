@@ -10,7 +10,8 @@
     "ngnix",
     "signin",
     "signout",
-    "skaffold"
+    "skaffold",
+    "testexample"
   ],
   "vs-kubernetes": {
     "disable-linters": ["resource-limits"]
