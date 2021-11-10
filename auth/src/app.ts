@@ -16,8 +16,7 @@ import { signupRouter } from "./routes/signup";
  * ErrorHandlers
  */
 
-import { errorHandler } from "./middlewares/error-handler";
-import { NotFoundError } from "./errors/not-found-error";
+import { errorHandler, NotFoundError } from "@eden-d-tickets/common";
 
 const app = express();
 app.set("trust proxy", true);

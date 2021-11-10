@@ -6,7 +6,7 @@ export default ({ currentUser }) => {
     !currentUser && { label: "Sign In", href: "/auth/signin" },
     currentUser && { label: "Sign Out", href: "/auth/signout" },
   ]
-    .filter((linkConfig) => linkConfig)
+    .filter(Boolean)
     .map(({ label, href }) => {
       return (
         <li key={href} className="nav-item">
