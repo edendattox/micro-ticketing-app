@@ -4,11 +4,6 @@ import { json } from "body-parser";
 import cookieSession from "cookie-session";
 
 /**
- * Routes
- */
-import { createTicketRouter } from "./routes/new";
-
-/**
  * ErrorHandlers
  */
 
@@ -17,6 +12,14 @@ import {
   NotFoundError,
   currentUser,
 } from "@eden-d-tickets/common";
+
+/**
+ * Routes
+ */
+import { createTicketRouter } from "./routes/new";
+import { showTicketRouter } from "./routes/show";
+import { indexTicketRouter } from "./routes/index";
+import { updateTicketRouter } from "./routes/update";
 
 const app = express();
 app.set("trust proxy", true);
@@ -34,6 +37,9 @@ app.use(currentUser);
  */
 
 app.use(createTicketRouter);
+app.use(showTicketRouter);
+app.use(indexTicketRouter);
+app.use(updateTicketRouter);
 
 /**
  *  Create error for the route that does'nt exits.
