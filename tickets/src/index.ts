@@ -10,6 +10,15 @@ const start = async () => {
   if (!process.env.MONGO_URI) {
     throw new Error("MONGO_URI must be provided");
   }
+  if (!process.env.NATS_CLIENT_ID) {
+    throw new Error("NATS_CLIENT_ID must be provided");
+  }
+  if (!process.env.NATS_URL) {
+    throw new Error("NATS_URL must be provided");
+  }
+  if (!process.env.NATS_CLUSTER_ID) {
+    throw new Error("NATS_CLUSTER_ID must be provided");
+  }
 
   const options = {
     useNewUrlParser: true,
@@ -18,7 +27,11 @@ const start = async () => {
   };
 
   try {
-    await natsWrapper.connect("ticketing", "haf", "http://nats-srv:4222");
+    await natsWrapper.connect(
+      process.env.NATS_CLUSTER_ID,
+      process.env.NATS_CLIENT_ID,
+      process.env.NATS_URL
+    );
 
     natsWrapper.client.on("close", () => {
       console.log("NATS connection closed!");
