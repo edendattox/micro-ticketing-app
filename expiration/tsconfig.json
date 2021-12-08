@@ -1,0 +1,13 @@
+{
+  // "include": [
+  //   "index.d.ts",
+  //   "src/*.ts",
+  //   "src/*.tsx",
+  //   "src/**/*.ts",
+  //   "src/**/*.tsx"
+  // ],
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "target": "es5"
+  }
+}
